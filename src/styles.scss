@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '../node_modules/@angular/material/theming';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+// // Import individual Angular Material components
+@import '../node_modules/@angular/material/button/button-theme';
+// @import '../node_modules/@angular/material/toolbar';
+// @import '../node_modules/@angular/material/icon';
+ @import '../node_modules/@angular/material/card/card-theme.import';
+// @import '../node_modules/@angular/material/input';
+// @import '../node_modules/@angular/material/snack-bar';
+@import '../node_modules/@angular/material/form-field/form-field-theme.import';

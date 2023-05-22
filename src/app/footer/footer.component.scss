@@ -1,0 +1,13 @@
+// Define the primary and accent colors
+$primary-color: #3f51b5;
+.my-footer {
+    background-color: $primary-color;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  

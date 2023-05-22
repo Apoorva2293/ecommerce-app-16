@@ -1,0 +1,71 @@
+$primary-color: #3f51b5;
+$accent-color: #009688;
+
+.header {
+  margin-top:10px;
+  background-color: $accent-color;
+  padding: 7px;
+  color: white;
+  text-align: center;
+  h2 {
+    margin-bottom: 0px;
+  }
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+  
+    .item-details {
+      flex: 1;
+      margin-left: 10px;
+    }
+    .item-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .item-image-small {
+      width: 50px; /* Adjust the width as per your requirements */
+      height: 50px; /* Adjust the height as per your requirements */
+      margin-right: 10px;
+    }
+    .item-price {
+      color: $accent-color;
+      margin-bottom: 5px;
+    }
+    .item-quantity{
+      display: flex;
+      align-items: center;
+      .quantity-btn {
+        font-size: 5px;
+      }
+      .quantity-num{
+        flex: 1;
+        text-align: center;
+        margin: 0 10px;
+      }
+    }
+
+    .delete-button {
+      padding: 5px 10px;
+      border: black;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+      .item-quantity{
+        margin-right: 0;
+        margin-left: auto;
+    }
+  }
+  .cart-item {
+    justify-content: end;
+    display: grid;
+    margin-right:10px;
+    margin-bottom: 10px;
+  } 

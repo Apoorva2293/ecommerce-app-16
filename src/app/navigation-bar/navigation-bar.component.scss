@@ -1,0 +1,28 @@
+$primary-color: #3f51b5;
+// Custom styles for the navigation bar
+.navbar {
+  background-color: $primary-color;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 16px;
+  color: white;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+  margin-top:10px;
+}
+

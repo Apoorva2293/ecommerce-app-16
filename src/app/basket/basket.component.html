@@ -1,0 +1,34 @@
+<div class="header">
+  <h2>Basket</h2>
+</div>
+
+<div *ngIf="cartItems.length === 0">
+  <p>Your basket is empty.</p>
+</div>
+
+<div *ngFor="let item of cartItems; let i = index" class="basket-item">
+  <img [src]="item.image" alt="Product Image" class="item-image-small">
+
+  <div class="item-info">
+    <p>{{ item.title }}</p>
+    <p class="item-price">{{ item.price | currency }}</p>
+  </div>
+
+  <div class="item-quantity">
+    <button mat-icon-button class="quantity-btn" (click)="decreaseQuantity(item)">
+      <mat-icon aria-label="Remove">remove</mat-icon>
+    </button>
+    <span class="quantity-num">{{ item.quantity }}</span>
+    <button mat-icon-button class="quantity-btn" (click)="increaseQuantity(item)">
+      <mat-icon aria-label="Add">add</mat-icon>
+    </button>
+    <button mat-icon-button class="delete-button" (click)="removeItem(i)">
+      <mat-icon aria-label="Delete">delete</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="cart-item">
+  <p>Total: {{ cartTotal | currency }}</p>
+  <button mat-raised-button color="primary" [routerLink]="'/basket/checkout'">Checkout</button>
+</div>

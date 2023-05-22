@@ -1,0 +1,148 @@
+<!-- checkout.component.html -->
+<div class="container">
+  <div class="header">
+    <h2>Checkout</h2>
+  </div>
+
+  <div class="cart-info">
+    <h2>
+      <mat-icon aria-label="Shopping Cart">shopping_cart</mat-icon>
+      Cart Information
+    </h2>
+    <p class="cart-items">Number of Items: &nbsp; {{ cartItems }}</p>
+    <p class="cart-total">Cart Total: &nbsp; ${{ cartTotal }}</p>
+  </div>
+
+  <form [formGroup]="checkoutForm" class="checkoutForm" (ngSubmit)="onSubmit()">
+    <!-- Customer Name -->
+    <mat-form-field>
+      <input matInput formControlName="customerName" placeholder="Customer Name" aria-label="Customer Name"
+        aria-required="true" />
+      <mat-error *ngIf="checkoutForm.get('customerName')?.invalid && checkoutForm.get('customerName')?.touched">
+        Customer Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Billing Address -->
+    <h3>Billing Address</h3>
+    <div formGroupName="billingAddress">
+      <!-- Address Line 1 -->
+      <mat-form-field>
+        <input matInput formControlName="line1" placeholder="Address Line 1" aria-label="Address Line 1"
+          aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('billingAddress.line1')?.invalid && checkoutForm.get('billingAddress.line1')?.touched">
+          Address Line 1 is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Address Line 2 -->
+      <mat-form-field>
+        <input matInput formControlName="line2" placeholder="Address Line 2" aria-label="Address Line 2" />
+      </mat-form-field>
+
+      <!-- Address Line 3 -->
+      <mat-form-field>
+        <input matInput formControlName="line3" placeholder="Address Line 3" aria-label="Address Line 3" />
+      </mat-form-field>
+
+      <!-- State -->
+      <mat-form-field>
+        <input matInput formControlName="state" placeholder="State" aria-label="State" />
+      </mat-form-field>
+
+      <!-- Postcode -->
+      <mat-form-field>
+        <input matInput formControlName="postcode" placeholder="Postcode" aria-label="Postcode" />
+      </mat-form-field>
+
+      <!-- Country -->
+      <mat-form-field>
+        <input matInput formControlName="country" placeholder="Country" aria-label="Country" aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('billingAddress.country')?.invalid && checkoutForm.get('billingAddress.country')?.touched">
+          Country is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Shipping Address -->
+    <h3>Shipping Address</h3>
+    <div formGroupName="shippingAddress">
+      <!-- Address Line 1 -->
+      <mat-form-field>
+        <input matInput formControlName="line1" placeholder="Address Line 1" aria-label="Address Line 1"
+          aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('shippingAddress.line1')?.invalid && checkoutForm.get('shippingAddress.line1')?.touched">
+          Address Line 1 is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Address Line 2 -->
+      <mat-form-field>
+        <input matInput formControlName="line2" placeholder="Address Line 2" aria-label="Address Line 2" />
+      </mat-form-field>
+
+      <!-- Address Line 3 -->
+      <mat-form-field>
+        <input matInput formControlName="line3" placeholder="Address Line 3" aria-label="Address Line 3" />
+      </mat-form-field>
+
+      <!-- State -->
+      <mat-form-field>
+        <input matInput formControlName="state" placeholder="State" aria-label="State" />
+      </mat-form-field>
+
+      <!-- Postcode -->
+      <mat-form-field>
+        <input matInput formControlName="postcode" placeholder="Postcode" aria-label="Postcode" />
+      </mat-form-field>
+
+      <!-- Country -->
+      <mat-form-field>
+        <input matInput formControlName="country" placeholder="Country" aria-label="Country" aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('shippingAddress.country')?.invalid && checkoutForm.get('shippingAddress.country')?.touched">
+          Country is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Payment Details -->
+    <h3>Payment Details</h3>
+    <div formGroupName="paymentDetails">
+      <!-- Credit Card Number -->
+      <mat-form-field>
+        <input matInput formControlName="ccNumber" placeholder="Credit Card Number" aria-label="Credit Card Number"
+          aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('paymentDetails.ccNumber')?.invalid && checkoutForm.get('paymentDetails.ccNumber')?.touched">
+          Credit Card Number is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Expiration Date -->
+      <mat-form-field>
+        <input matInput formControlName="expDate" placeholder="Expiration Date" aria-label="Expiration Date"
+          aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('paymentDetails.expDate')?.invalid && checkoutForm.get('paymentDetails.expDate')?.touched">
+          Expiration Date is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- CVC Code -->
+      <mat-form-field>
+        <input matInput formControlName="cvcCode" placeholder="CVC Code" aria-label="CVC Code" aria-required="true" />
+        <mat-error
+          *ngIf="checkoutForm.get('paymentDetails.cvcCode')?.invalid && checkoutForm.get('paymentDetails.cvcCode')?.touched">
+          CVC Code is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Submit Button -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="checkoutForm.invalid">Pay Now</button>
+  </form>
+</div>
